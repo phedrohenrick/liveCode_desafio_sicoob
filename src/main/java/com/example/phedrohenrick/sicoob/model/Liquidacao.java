@@ -4,17 +4,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Entity(name = "liquidacao")
+@Entity
+@Table(name = "liquidacao")
 public class Liquidacao {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String valorOriginal;
     private String valorLiquidado;
-    
+
     public String getValorOriginal() {
         return valorOriginal;
     }
